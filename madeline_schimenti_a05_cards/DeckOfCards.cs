@@ -8,7 +8,8 @@ namespace madeline_schimenti_a05_cards
 {
     public class DeckOfCards
     {
-        private PlayingCards[] deck;
+
+        private PlayingCards.Deck[] deck;
         private int currentCard;
         private const int NUM_CARDS = 52;
         private Random randomNumbers;
@@ -25,6 +26,8 @@ namespace madeline_schimenti_a05_cards
                                             PlayingCards.CardValues.Queen, PlayingCards.CardValues.Seven,
                                             PlayingCards.CardValues.Six, PlayingCards.CardValues.Ten,
                                             PlayingCards.CardValues.Three };
+
+            deck = new PlayingCards.Deck[NUM_CARDS];
          }
 
     }
