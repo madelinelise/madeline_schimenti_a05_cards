@@ -1,1 +1,10 @@
 c:\users\madeline\documents\visual studio 2015\Projects\madeline_schimenti_a05_cards\madeline_schimenti_a05_cards\bin\Debug\madeline_schimenti_a05_cards.exe.config
+C:\Users\Madeline\Documents\Visual Studio 2015\Projects\madeline_schimenti_a05_cards\madeline_schimenti_a05_cards\obj\Debug\madeline_schimenti_a05_cards.csprojResolveAssemblyReference.cache
+C:\Users\Madeline\Documents\Visual Studio 2015\Projects\madeline_schimenti_a05_cards\madeline_schimenti_a05_cards\obj\Debug\madeline_schimenti_a05_cards.Form1.resources
+C:\Users\Madeline\Documents\Visual Studio 2015\Projects\madeline_schimenti_a05_cards\madeline_schimenti_a05_cards\obj\Debug\madeline_schimenti_a05_cards.Properties.Resources.resources
+C:\Users\Madeline\Documents\Visual Studio 2015\Projects\madeline_schimenti_a05_cards\madeline_schimenti_a05_cards\obj\Debug\madeline_schimenti_a05_cards.csproj.GenerateResource.Cache
+C:\Users\Madeline\Documents\Visual Studio 2015\Projects\madeline_schimenti_a05_cards\madeline_schimenti_a05_cards\bin\Debug\madeline_schimenti_a05_cards.exe
+C:\Users\Madeline\Documents\Visual Studio 2015\Projects\madeline_schimenti_a05_cards\madeline_schimenti_a05_cards\bin\Debug\madeline_schimenti_a05_cards.pdb
+C:\Users\Madeline\Documents\Visual Studio 2015\Projects\madeline_schimenti_a05_cards\madeline_schimenti_a05_cards\bin\Debug\PlayingCards.dll
+C:\Users\Madeline\Documents\Visual Studio 2015\Projects\madeline_schimenti_a05_cards\madeline_schimenti_a05_cards\obj\Debug\madeline_schimenti_a05_cards.exe
+C:\Users\Madeline\Documents\Visual Studio 2015\Projects\madeline_schimenti_a05_cards\madeline_schimenti_a05_cards\obj\Debug\madeline_schimenti_a05_cards.pdb

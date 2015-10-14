@@ -32,8 +32,9 @@ namespace madeline_schimenti_a05_cards
             currentCard = 0;
             randomNumbers = new Random();
 
-            for (int count = 0; count < deck.Length; ++count)
-                deck[count] = new PlayingCards.Card(faces[count % 13], value[count / 13]);
+            for (int count = 0; count < 52; ++count)
+                deck[count] = new PlayingCards.Card(faces[count/13], value[count%13]);
+
 
         } // end constructor
 
