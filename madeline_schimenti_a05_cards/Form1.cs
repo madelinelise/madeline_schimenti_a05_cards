@@ -13,11 +13,11 @@ namespace madeline_schimenti_a05_cards
     public partial class Form1 : Form
     {
 
+        PlayingCards.Deck theDeck = new PlayingCards.Deck();
+        
 
-
-        public Random randomNumbers;
-        int currentCard = 0;
-        const int NUMBER_OF_CARDS = 52;
+        public Random random;
+        
 
         public Form1()
         {
@@ -29,16 +29,11 @@ namespace madeline_schimenti_a05_cards
 
         private void buttonShuffle_Click(object sender, EventArgs e)
         {
-            Shuffle2();
 
-            
-
-        }
-
-        public void pictureBox1_Click(object sender, EventArgs e)
-        {
+            Shuffle();
 
         }
+
 
         public void buttonDeal_Click(object sender, EventArgs e)
         {
@@ -46,10 +41,48 @@ namespace madeline_schimenti_a05_cards
             PlayingCards.Deck theDeck = new PlayingCards.Deck();
             DeckOfCards deckOfCards = new DeckOfCards();
             
-            CreateDeck();
+            CreateDeck2();
+
+        }
+
+        public void CreateDeck2()
+        {
+
+            // I will admit, I got help on this for each loop. I tried various things to get the cards added in a loop... 
+            // I was so close in theory, but needed some help on syntax.. and I was missing the cast.
+            // I kept the long way, which I did 100% on my own, in case you would rather see that. It can be found in DeckOfCards.cs and the original CreateDeck() method.
+
+            foreach (var face in Enum.GetValues(typeof(PlayingCards.CardSuits)).Cast<PlayingCards.CardSuits>())
+            {
+                foreach (var value in Enum.GetValues(typeof(PlayingCards.CardValues)).Cast<PlayingCards.CardValues>())
+                {
+                    theDeck.Cards.Add(new PlayingCards.Card(face, value));
+                }
+            }
+
+
+            PictureBox[] cardimg = new PictureBox[52];
+
+            for (var i = 0; i < cardimg.Length; i++)
+            {
+                PictureBox maincardImg = new PictureBox();
+                maincardImg.SizeMode = PictureBoxSizeMode.AutoSize;
+                maincardImg.Image = theDeck.Cards[i].FaceImage;
+                cardimg[i] = maincardImg;
+                maincardImg.Parent = this;
+                maincardImg.Visible = true;
+                maincardImg.Left = 50 + (i * 20);
+                maincardImg.Top = 78;
+                maincardImg.BringToFront();
+
+            }
+
+
             
         }
 
+        // This was my originally really long way of adding the cards to the deck... I kept this to show my own work
+        // I got help on the loop in CreateDeck2(), which uses significantly less code.
         public void CreateDeck()
         {
             PlayingCards.Deck theDeck = new PlayingCards.Deck();
@@ -171,6 +204,9 @@ namespace madeline_schimenti_a05_cards
             theDeck.Cards.Add(S10);
             theDeck.Cards.Add(S3);
 
+            
+           
+
             PictureBox[] cardimg = new PictureBox[52];
 
             for (var i = 0; i < cardimg.Length; i++)
@@ -186,19 +222,30 @@ namespace madeline_schimenti_a05_cards
                 maincardImg.BringToFront();
 
             }
+
+
+
+            random = new Random();
+
+            for (int i = 0; i < theDeck.Cards.Count; ++i)
+            {
+                int second = random.Next(52);
+                PlayingCards.Card
+                    temp = theDeck.Cards[i];
+                theDeck.Cards[i] = theDeck.Cards[second];
+                theDeck.Cards[second] = temp;
+            }
+
         }
 
 
         public void Shuffle()
         {
-
-            PlayingCards.Deck theDeck = new PlayingCards.Deck();
-
-            randomNumbers = new Random();
+            random = new Random();
 
             for (int i = 0; i < theDeck.Cards.Count; i++)
             {
-                int second = randomNumbers.Next(NUMBER_OF_CARDS);
+                int second = random.Next(52);
                 PlayingCards.Card
                     temp = theDeck.Cards[i];
                 theDeck.Cards[i] = theDeck.Cards[second];
@@ -208,20 +255,16 @@ namespace madeline_schimenti_a05_cards
 
         public void Shuffle2()
         {
-            
             PlayingCards.Deck theDeck = new PlayingCards.Deck();
-            randomNumbers = new Random();
+            random = new Random();
 
-            
-            for (int firstNum = 0; firstNum > theDeck.Cards.Count; ++firstNum)
+            for (int i = theDeck.Cards.Count - 1; i > 0; i--)
             {
-                
-                int secondNum = randomNumbers.Next(52);
-                PlayingCards.Card tempCard = theDeck.Cards[firstNum];
-                theDeck.Cards[firstNum] = theDeck.Cards[secondNum];
-                theDeck.Cards[secondNum] = tempCard;
+                int j = random.Next(i + 1);
+                PlayingCards.Card temp = theDeck.Cards[i]; // Notice the change on this line
+                theDeck.Cards[i] = theDeck.Cards[j];
+                theDeck.Cards[j] = temp;
             }
-
         } // end method Shuffle
 
 
